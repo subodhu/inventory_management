@@ -1,0 +1,52 @@
+{% extends "__base.html" %}
+{% load static %}
+
+{% block title %}{{ object.name }} | Inventory Detail{% endblock title %}
+
+{% block contnet %}
+<div class="py-4">
+  <h4>Inventory Datail</h4>
+  <small class="text-muted">Showing Inventory Detail</small>
+</div>
+<div class="row">
+  <div class="col-9">
+    <div class="table-responsive">
+      <table class="table table-success table-striped">
+         <tbody>
+          <tr>
+            <td>Name:</td>
+            <td>Name: {{ object.name }}</td>
+          </tr>
+          <tr>
+            <td>Supplier Name:</td>
+            <td>{{ object.supplier.name }}</td>
+          </tr>
+          <tr>
+            <td>Description: </td>
+            <td>{{ object.description }}</td>
+          </tr>
+          <tr>
+            <td>Stock: </td>
+            <td>{{ object.stock }}</td>
+          </tr>
+          <tr>
+            <td>Availability: </td>
+            <td>{{ object.availability }}</td>
+          </tr>
+          <tr>
+            <td>Note: </td>
+            <td>{{ object.note }}</td>
+          </tr>
+          <tr>
+            <td>Created Date: </td>
+            <td>{{ object.created_at|date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-3">
+    <img src="{% static 'thumbs/inventory_thumbnail.jpg' %}" class="img-thumbnail align-right" alt="Placeholder Image">
+  </div>
+</div>
+{% endblock contnet %}
