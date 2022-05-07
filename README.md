@@ -20,11 +20,11 @@ This is a very simple inventory management system written in django 4 and python
 - Run server:
     `python manage.py runserver`
 
-Then visit the [localhost:8000/inventory/](localhost:8000/inventory/). You can see the list of inventories.
+Then visit the [localhost:8000/inventory/](http://localhost:8000/inventory/). You can see the list of inventories.
 
 
 You can also add new inventory from django admin pannel. For this create a superuser account.
 `python manage.py createsuperuser`
-Then visit [localhost:8000/admin/](localhost:8000/admin/)
+Then visit [localhost:8000/admin/](http://localhost:8000/admin/)
 
-You can view the swagger api doc in [localhost:8000/docs/](localhost:8000/docs/).
+You can view the swagger api doc in [localhost:8000/docs/](htpp://localhost:8000/docs/).
