@@ -1,24 +1,25 @@
 import requests
+from requests.exceptions import ConnectionError
 from django.http import HttpResponse
-from django.shortcuts import reverse
-from django.views.generic import ListView, DetailView
+from django.shortcuts import reverse, render
+from django.views.generic import DetailView
 
 from .models import Inventory
 
 
-class InventoryListView(ListView):
+def inventory_list(request):
     template_name = 'inventory/inventories.html'
-
-    def get_queryset(self):
-        url = self.request.build_absolute_uri(reverse('inventory_api:inventory_list'))
+    url = request.build_absolute_uri(reverse('inventory_api:inventory_list'))
+    msg = 'Inventory fetching api is not working properly. Try again later.'
+    try:
         response = requests.get(url)
+    except ConnectionError:
+        return HttpResponse(msg, status_code=503)
+    else:
         if response.status_code == 200:
-            return response.json()
+            return render(request, template_name, {'object_list': response.json()})
         else:
-            return HttpResponse('Api down.', status_code=503)
-
-
-inventory_list = InventoryListView.as_view()
+            return HttpResponse(msg, status=503)
 
 
 class InventoryDetailView(DetailView):
