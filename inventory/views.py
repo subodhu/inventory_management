@@ -10,7 +10,7 @@ class InventoryListView(ListView):
     template_name = 'inventory/inventories.html'
 
     def get_queryset(self):
-        url = self.request.build_absolute_uri(reverse('inventory_api:inventories'))
+        url = self.request.build_absolute_uri(reverse('inventory_api:inventory_list'))
         response = requests.get(url)
         if response.status_code == 200:
             return response.json()
