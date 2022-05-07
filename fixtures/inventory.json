@@ -1,0 +1,48 @@
+[
+{
+    "model": "inventory.inventory",
+    "pk": 1,
+    "fields": {
+        "name": "Dotpen",
+        "description": "Pen for every occasion.",
+        "note": "Best pen available hare.",
+        "stock": 33,
+        "availability": true,
+        "supplier": 1,
+        "created_at": "2022-05-07T06:25:07.785Z",
+        "updated_at": "2022-05-07T06:25:07.785Z"
+    }
+},
+{
+    "model": "inventory.inventory",
+    "pk": 2,
+    "fields": {
+        "name": "Football",
+        "description": "Best sports ever",
+        "note": "Football for everyone.",
+        "stock": 555,
+        "availability": true,
+        "supplier": 2,
+        "created_at": "2022-05-07T09:29:02.350Z",
+        "updated_at": "2022-05-07T09:29:02.350Z"
+    }
+},
+{
+    "model": "inventory.supplier",
+    "pk": 1,
+    "fields": {
+        "name": "Pen Factory",
+        "created_at": "2022-05-07T06:24:15.226Z",
+        "updated_at": "2022-05-07T09:28:07.567Z"
+    }
+},
+{
+    "model": "inventory.supplier",
+    "pk": 2,
+    "fields": {
+        "name": "Football Supplier",
+        "created_at": "2022-05-07T09:28:19.986Z",
+        "updated_at": "2022-05-07T09:28:19.986Z"
+    }
+}
+]
