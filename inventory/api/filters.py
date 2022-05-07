@@ -7,4 +7,4 @@ class InventoryFilter(filters.FilterSet):
 
     class Meta:
         model = Inventory
-        fields = ["name"]
+        fields = {"name": ['iexact', 'icontains']}
