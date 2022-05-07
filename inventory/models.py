@@ -8,7 +8,7 @@ class Inventory(models.Model):
     note = models.TextField(_("Note"))
     stock = models.PositiveIntegerField(_("Stock"))
     availability = models.BooleanField(_("Availiability"), default=True)
-    supplier = models.ForeignKey('Suplier', related_name='inventories', on_delete=models.CASCADE)
+    supplier = models.ForeignKey('Supplier', related_name='inventories', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -20,7 +20,7 @@ class Inventory(models.Model):
         return f'{self.name}: {self.stock}'
 
 
-class Suplier(models.Model):
+class Supplier(models.Model):
     name = models.CharField(_('Supplier Name'), max_length=56)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
