@@ -27,4 +27,4 @@ You can also add new inventory from django admin pannel. For this create a super
 `python manage.py createsuperuser`
 Then visit [localhost:8000/admin/](http://localhost:8000/admin/)
 
-You can view the swagger api doc in [localhost:8000/docs/](htpp://localhost:8000/docs/).
+You can view the swagger api doc in [localhost:8000/docs/](http://localhost:8000/docs/).
